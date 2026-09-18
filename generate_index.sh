@@ -4,6 +4,7 @@ JS_FILE="$1"
 OUTPUT_DIR="."
 OUTPUT_JSON="$OUTPUT_DIR/index.json"
 OUTPUT_GZ="$OUTPUT_DIR/index.json.gz"
+HASH_JSON="$OUTPUT_DIR/hash.json"
 
 if [ ! -f "$JS_FILE" ]; then
   echo "Error: El archivo $JS_FILE no existe."
@@ -37,5 +38,15 @@ cat > "$OUTPUT_JSON" <<EOF
 EOF
 
 gzip -c "$OUTPUT_JSON" > "$OUTPUT_GZ"
+
+HASH=$(sha256sum "$OUTPUT_GZ" | awk '{ print $1 }')
+
+cat > "$HASH_JSON" <<EOF
+{
+  "hash": "$HASH",
+  "algorithm": "sha256",
+  "filename": "index.json.gz"
+}
+EOF
 
 rm "$OUTPUT_JSON"
