@@ -44,7 +44,7 @@ for JS_FILE in "$INPUT_DIR"/*.js; do
   "title": "$TITLE",
   "version": "$VERSION",
   "description": "$DESCRIPTION",
-  "domain": $DOMAIN,
+  "domain": "$DOMAIN",
   "urlPatterns": $URL_PATTERNS,
   "authors": ["$AUTHORS"],
   "authorsLinks": ["$AUTHORS_LINKS"],
