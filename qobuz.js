@@ -4,7 +4,7 @@ registerParser({
   authors: "killua99",
   authorsLinks: "https://codeberg.org/killua99",
   title: "qobuz",
-  version: "0.1.0",
+  version: "1.0.0",
   description: "Global on-demand music streaming with playlists and recommendations.",
   category: "platform",
   tags: [],
