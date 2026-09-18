@@ -41,11 +41,21 @@ gzip -c "$OUTPUT_JSON" > "$OUTPUT_GZ"
 
 HASH=$(sha256sum "$OUTPUT_GZ" | awk '{ print $1 }')
 
+SIZE=$(stat -c %s "$OUTPUT_JSON")
+
+GZ_SIZE=$(stat -c %s "$OUTPUT_GZ")
+
+COUNT=$(find . -maxdepth 1 -name "*.js" | wc -l)
+
+GENERATED_AT=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
+
 cat > "$HASH_JSON" <<EOF
 {
-  "hash": "$HASH",
-  "algorithm": "sha256",
-  "filename": "index.json.gz"
+  "sha256": "$HASH",
+  "size": $SIZE,
+  "gzSize": $GZ_SIZE,
+  "count": $COUNT,
+  "generatedAt": "$GENERATED_AT"
 }
 EOF
 
