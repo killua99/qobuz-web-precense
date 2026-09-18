@@ -52,7 +52,7 @@ for JS_FILE in "$INPUT_DIR"/*.js; do
   "mode": "$MODE",
   "watchAutoDetect": "$WATCH_AUTO_DETECT",
   "category": ["$CATEGORY"],
-  "tags": $TAGS,
+  "tags": ${TAGS:-[]},
   "file": "$FILE_PATH"
 }
 EOF
