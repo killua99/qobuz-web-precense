@@ -1,5 +1,5 @@
 registerParser({
-  id: "killua99_qobuz.com_Lio",
+  id: "killua99_qobuz.com_k99",
   domain: "qobuz.com",
   authors: "killua99",
   authorsLinks: "https://codeberg.org/killua99",
