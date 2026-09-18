@@ -1,6 +1,6 @@
 registerParser({
   id: "killua99_qobuz.com_k99",
-  domain: "qobuz.com",
+  domain: "play.qobuz.com",
   authors: "killua99",
   authorsLinks: "https://codeberg.org/killua99",
   title: "qobuz",
@@ -8,7 +8,7 @@ registerParser({
   description: "Global on-demand music streaming with playlists and recommendations.",
   category: "platform",
   tags: [],
-  urlPatterns: [/.*/],
+  urlPatterns: ["/.*/"],
   fn: function () {
     let title = document.querySelector("[class='player__track-overflow']")?.textContent;
     let artist = document.querySelector("[class='player__track-album'] a")?.textContent;
